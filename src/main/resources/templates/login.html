@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	.myInfoBtn{
+		background-color: lime;
+		padding: 10px;
+		margin-left: 10px;
+	}
+	.myInfoBtn:hover {
+	background-color: blue;
+		}
+		
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h1 style="color: green">Ready To Start CorpPass</h1>
+
+<button class="myInfoBtn" onclick="callMyInfoPage()">
+Log in with CorpPass
+</button>
+
+</body>
+
+<script type="text/javascript">
+
+function callMyInfoPage(){
+
+  	 $.ajax({
+        url : "/myinfopage",
+        type : 'get',
+        success : function(data) {
+          console.log(data)
+          window.location.href = data
+        },
+        error : function(err){
+       	 console.log(err)
+        }
+    });
+   }
+
+	
+</script>
+
+</html>
